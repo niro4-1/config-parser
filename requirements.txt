@@ -1,0 +1,2 @@
+# Bump relevant dependency version
+# Example: Update tomllib to the latest version
