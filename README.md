@@ -29,3 +29,31 @@ print(value)
 ```
 
 This example demonstrates loading a TOML configuration file and accessing a specific value.
+
+## Additional Examples
+
+### Example 1: Loading YAML Configuration
+```python
+config.load('config.yaml')
+```
+
+### Example 2: Accessing Nested Values
+```python
+nested_value = config.get('section.subsection', 'key')
+print(nested_value)
+```
+
+### Example 3: Handling Missing Keys
+```python
+try:
+    value = config.get('section', 'missing_key')
+except KeyError:
+    print('Key not found!')
+```
+
+### Example 4: Environment Variable Interpolation
+```python
+config.load('config_with_env.toml')
+```
+
+This shows how to handle different configurations and error cases, enhancing clarity on usage.
