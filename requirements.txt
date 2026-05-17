@@ -1,1 +1,1 @@
-tomllib==2.5.0
+tomllib==2.5.1
