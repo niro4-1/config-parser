@@ -1,1 +1,2 @@
 tomllib==2.5.1
+react==latest
