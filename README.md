@@ -56,4 +56,6 @@ except KeyError:
 config.load('config_with_env.toml')
 ```
 
-This shows how to handle different configurations and error cases, enhancing clarity on usage.
+## Silent TOML Parse Failures
+
+When loading TOML files, it's important to be aware that parse failures may occur silently. If a file contains errors, the `ConfigParser` will not raise an exception but will instead skip the problematic sections. To ensure that your configuration is loaded correctly, always validate the configuration after loading and handle any missing keys appropriately.
