@@ -20,42 +20,48 @@ from config_parser import ConfigParser
 # Create a ConfigParser instance
 config = ConfigParser()
 
-# Load configuration from a file
+# Load configuration from a TOML file
 config.load('config.toml')
 
-# Access values
+# Access a specific value from the configuration
 value = config.get('section', 'key')
-print(value)
+print('Value from TOML:', value)
 ```
 
 This example demonstrates loading a TOML configuration file and accessing a specific value.
 
 ## Additional Examples
 
-### Example 1: Loading YAML Configuration
+### Example 1: Loading a YAML Configuration File
 ```python
+# Load configuration from a YAML file
 config.load('config.yaml')
 ```
 
-### Example 2: Accessing Nested Values
+### Example 2: Accessing Nested Values in Configuration
 ```python
+# Access a nested value from the configuration
 nested_value = config.get('section.subsection', 'key')
-print(nested_value)
+print('Nested Value:', nested_value)
 ```
 
-### Example 3: Handling Missing Keys
+### Example 3: Handling Missing Keys Gracefully
 ```python
+# Attempt to access a key that may not exist
 try:
     value = config.get('section', 'missing_key')
+    print('Value:', value)
 except KeyError:
-    print('Key not found!')
+    print('Key not found! Please check your configuration.')
 ```
 
-### Example 4: Environment Variable Interpolation
+### Example 4: Loading Configuration with Environment Variable Interpolation
 ```python
+# Load configuration that includes environment variables
 config.load('config_with_env.toml')
+print('Config with Env:', config.get('section', 'key'))
 ```
 
-## Silent TOML Parse Failures
+## Important Note on TOML Parsing
 
-When loading TOML files, it's important to be aware that parse failures may occur silently. If a file contains errors, the `ConfigParser` will not raise an exception but will instead skip the problematic sections. To ensure that your configuration is loaded correctly, always validate the configuration after loading and handle any missing keys appropriately.
+When loading TOML files, be aware that parse failures may occur silently. If a file contains errors, the `ConfigParser` will skip the problematic sections without raising an exception. Always validate the configuration after loading to ensure it is correct and handle any missing keys appropriately.
