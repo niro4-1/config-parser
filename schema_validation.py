@@ -8,6 +8,9 @@ def validate_schema(data, schema):
 
 # Example usage
 if __name__ == '__main__':
-    data = {}  # Your data here
-    schema = {}  # Your schema here
-    validate_schema(data, schema)
+    # Example data
+    data = {'name': 'John', 'age': 30}
+    # Example schema
+    schema = {'type': 'object', 'properties': {'name': {'type': 'string'}, 'age': {'type': 'integer'}}}
+    # Call the validation function
+    validate_schema(data, schema)  # This should validate the data against the schema
