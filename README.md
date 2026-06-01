@@ -4,7 +4,7 @@ A lightweight library for parsing layered configuration files (TOML/YAML/env).
 
 ## Installation
 
-You can install the library using pip:
+Install the library using pip:
 
 ```bash
 pip install config-parser
@@ -12,7 +12,7 @@ pip install config-parser
 
 ## Usage
 
-Here's a simple example of how to use the library:
+Here's how to use the library:
 
 ```python
 from config_parser import ConfigParser
@@ -23,12 +23,12 @@ config = ConfigParser()
 # Load configuration from a TOML file
 config.load('config.toml')
 
-# Access a specific value from the configuration
+# Access a specific value
 value = config.get('section', 'key')
 print('Value from TOML:', value)
 ```
 
-This example demonstrates loading a TOML configuration file and accessing a specific value.
+This example shows loading a TOML file and accessing a value.
 
 ## Additional Examples
 
@@ -38,30 +38,30 @@ This example demonstrates loading a TOML configuration file and accessing a spec
 config.load('config.yaml')
 ```
 
-### Example 2: Accessing Nested Values in Configuration
+### Example 2: Accessing Nested Values
 ```python
-# Access a nested value from the configuration
+# Access a nested value
 nested_value = config.get('section.subsection', 'key')
 print('Nested Value:', nested_value)
 ```
 
-### Example 3: Handling Missing Keys Gracefully
+### Example 3: Handling Missing Keys
 ```python
-# Attempt to access a key that may not exist
+# Attempt to access a potentially missing key
 try:
     value = config.get('section', 'missing_key')
     print('Value:', value)
 except KeyError:
-    print('Key not found! Please check your configuration.')
+    print('Key not found! Check your configuration for accuracy.')
 ```
 
 ### Example 4: Loading Configuration with Environment Variable Interpolation
 ```python
-# Load configuration that includes environment variables
+# Load configuration with environment variables
 config.load('config_with_env.toml')
 print('Config with Env:', config.get('section', 'key'))
 ```
 
 ## Important Note on TOML Parsing
 
-When loading TOML files, be aware that parse failures may occur silently. If a file contains errors, the `ConfigParser` will skip the problematic sections without raising an exception. Always validate the configuration after loading to ensure it is correct and handle any missing keys appropriately.
+When loading TOML files, errors may occur silently. The `ConfigParser` skips problematic sections without raising exceptions. Always validate your configuration after loading to ensure correctness and handle missing keys appropriately.
