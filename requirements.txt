@@ -1,4 +1,4 @@
-tomllib==2.5.1
+tomllib==latest
 pydantic==2.13.4
 react==latest
 backoff==latest
