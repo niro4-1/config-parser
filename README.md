@@ -1,11 +1,1 @@
-## Important Note on TOML Parsing
-
-When loading TOML files, be aware that parse failures may occur silently. If a file contains errors, the `ConfigParser` will skip the problematic sections without raising an exception. Always validate the configuration after loading to ensure it is correct and handle any missing keys appropriately.
-
-### Additional Details on TOML Parsing
-
-- **Error Handling**: Implement error handling to catch and log any issues during parsing.
-- **Validation**: Consider adding a validation step after loading to check for required keys and expected data types.
-- **Debugging**: Use logging to output the loaded configuration and any skipped sections for easier debugging.
-
-This ensures that users are aware of potential pitfalls and can handle them effectively.
+## Usage Instructions\n\nTo use the config-parser, install the required dependencies and run the following command:\n\n```bash\npython config_parser.py [options]\n```\n\nReplace `[options]` with the appropriate flags and arguments for your use case.\n\n## Contribution Guidelines\n\n1. **Fork the Repository**: Create a personal fork of the repository.\n2. **Create a Branch**: Make a new branch for your feature or bug fix.\n3. **Make Changes**: Implement your changes and ensure they are well-tested.\n4. **Submit a Pull Request**: Push your branch and submit a pull request for review.\n\nPlease ensure your code adheres to the project's coding standards and includes relevant documentation.\n\n## Important Note on TOML Parsing\n\nWhen loading TOML files, be aware that parse failures may occur silently. If a file contains errors, the `ConfigParser` will skip the problematic sections without raising an exception. Always validate the configuration after loading to ensure it is correct and handle any missing keys appropriately.\n\n### Additional Details on TOML Parsing\n\n- **Error Handling**: Implement error handling to catch and log any issues during parsing.\n- **Validation**: Consider adding a validation step after loading to check for required keys and expected data types.\n- **Debugging**: Use logging to output the loaded configuration and any skipped sections for easier debugging.\n\nThis ensures that users are aware of potential pitfalls and can handle them effectively.
