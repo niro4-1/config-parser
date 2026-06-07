@@ -1,3 +1,30 @@
+# config-parser
+A repository for parsing configuration files.
+
+## Features
+
+- Parses TOML, JSON, and YAML configuration files
+- Provides a unified interface for configuration management
+- Supports nested configuration structures
+
+## Installation
+
+```bash
+pip install config-parser
+```
+
+## Usage
+
+```python
+from config_parser import ConfigParser
+
+config = ConfigParser()
+config.load("config.toml")
+
+# Access configuration values
+print(config.get("database.host"))
+```
+
 ## Important Note on TOML Parsing
 
 When loading TOML files, be aware that parse failures may occur silently. If a file contains errors, the `ConfigParser` will skip the problematic sections without raising an exception. Always validate the configuration after loading to ensure it is correct and handle any missing keys appropriately.
