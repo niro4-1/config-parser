@@ -1,5 +1,5 @@
 tomllib==0.1.1
 pydantic==2.13.5
-react==2.15.0
+react==latest
 backoff==latest
 tqdm==latest
