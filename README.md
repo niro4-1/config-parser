@@ -12,3 +12,7 @@ When loading TOML files, be aware that parse failures may occur silently. If a f
 - **Debugging**: Use logging to output the loaded configuration and any skipped sections for easier debugging.
 
 This ensures that users are aware of potential pitfalls and can handle them effectively.
+
+### Fix for Issue #2
+
+The branch contains an updated README with detailed explanation of TOML parsing behavior and error handling.
